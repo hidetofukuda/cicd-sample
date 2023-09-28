@@ -1,9 +1,8 @@
-exports.handler = async (event) => {
+export const handler = async (event) => {
+  // TODO implement
   const response = {
-      isBase64Encoded : boolean,
-      statusCode: "200",
-      headers: { "Content-Type":"text/plain" },
-      body: JSON.stringify('Hello from Lambda!'),
+    statusCode: 200,
+    body: JSON.stringify('Hello from Lambda!'),
   };
-  return response;
+  return response;s
 };
