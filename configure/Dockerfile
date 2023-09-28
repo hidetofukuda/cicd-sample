@@ -1,13 +1,7 @@
 FROM public.ecr.aws/docker/library/node:18.18.0-slim
-# Create app directory
-WORKDIR /usr/src/app
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
-# Bundle app source
-COPY . .
-CMD [ "node", "server.js" ]
+
+# Copy function code
+COPY index.js ${LAMBDA_TASK_ROOT}
+  
+# Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
+CMD [ "index.handler" ]
