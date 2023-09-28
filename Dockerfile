@@ -1,4 +1,4 @@
-FROM node:18
+FROM public.ecr.aws/docker/library/node:18.18.0-slim
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
